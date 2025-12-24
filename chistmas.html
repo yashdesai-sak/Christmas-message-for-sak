@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merry Christmas 🎄</title>
+<style>
+/* Basic page styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#0b3d2e, #145a32);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  padding: 40px;
+}
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Headings */
+h1 {
+  color: #ffdede;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+h2 {
+  color: #ffbbbb;
+  font-size: 2em;
+  margin-top: 20px;
+}
+p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-top: 20px;
+}
+
+/* Tree & hearts */
+.tree {
+  font-size: 3em;
+  margin: 20px 0;
+}
+.heart {
+  color: red;
+  font-size: 2.5em;
+  position: absolute;
+  animation: float 6s infinite;
+}
+
+/* Snowflake style */
+.snowflake {
+  color: #fff;
+  font-size: 1.5em;
+  position: fixed;
+  top: -10px;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  animation-name: fall;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Heart float animation */
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 1; }
+  50% { transform: translateY(-150px) rotate(20deg); opacity: 0.8; }
+  100% { transform: translateY(0px); opacity: 1; }
+}
+
+/* Snow fall animation */
+@keyframes fall {
+  0% { top: -10px; transform: translateX(0px); }
+  100% { top: 100vh; transform: translateX(50px); }
+}
+
+/* Twinkling stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Stars -->
+<div id="stars"></div>
+
+<div class="card">
+  <h1>🎄 Merry Christmas, [Her Name]! 🎄</h1>
+
+  <div class="tree">🎄🎄🎄</div>
+
+  <p>
+    You mean so much to me.  
+    Thank you for all the smiles, laughter, and warmth you bring into my life.  
+    I hope this Christmas fills your heart with joy, peace, and love.
+  </p>
+
+  <h2>BIG THANK YOU ❤️</h2>
+</div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left: 20%; top: 60%;">❤️</div>
+<div class="heart" style="left: 50%; top: 70%;">❤️</div>
+<div class="heart" style="left: 80%; top: 65%;">❤️</div>
+
+<script>
+// Add snowflakes
+for (let i = 0; i < 30; i++) {
+    let snow = document.createElement('div');
+    snow.className = 'snowflake';
+    snow.style.left = Math.random() * window.innerWidth + 'px';
+    snow.style.fontSize = 10 + Math.random()*20 + 'px';
+    snow.style.animationDuration = 5 + Math.random()*5 + 's';
+    snow.innerText = '❄️';
+    document.body.appendChild(snow);
+}
+
+// Add stars
+for (let i = 0; i < 50; i++) {
+    let star = document.createElement('div');
+    star.className = 'star';
+    star.style.top = Math.random()*window.innerHeight + 'px';
+    star.style.left = Math.random()*window.innerWidth + 'px';
+    star.style.animationDuration = 1 + Math.random()*2 + 's';
+    document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
